@@ -68,27 +68,32 @@ It is clear that there is not a uniform distribution of samples per image label.
 
 #### 1. Describe how, and identify where in your code, you preprocessed the image data. What tecniques were chosen and why did you choose these techniques? Consider including images showing the output of each preprocessing technique. Pre-processing refers to techniques such as converting to grayscale, normalization, etc.
 
-The code for this step is contained in the fourth code cell of the IPython notebook.
+The code for this step is contained in the sixth, seventh, and eigth code cells of the IPython notebook.
 
-As a first step, I decided to convert the images to grayscale because ...
+From "Data Set Exploration and Visualization", I could see that man of the images were dark and with low contrast.  I rand the training data through a histogram equalization process using OpenCV's implementation of "Contrast Limited Adaptive Histogram Equalization" (CLACHE)]
 
-Here is an example of a traffic sign image before and after grayscaling.
+The result was the training data being all of relatively equal brightness and contrast:
 
 ![alt text][before_after_image1]
 
 ![alt text][before_after_image2]
 
-As a last step, I normalized the image data because ...
+I kept the images as 3 channel color since color is an important part of identifying traffic signs.
+
+I normalized the image pixel values from "0 to 255" to "-0.5 to 0.5". 
 
 #### 2. Describe how, and identify where in your code, you set up training, validation and testing data. How much data was in each set? Explain what techniques were used to split the data into these sets. (OPTIONAL: As described in the "Stand Out Suggestions" part of the rubric, if you generated additional data for training, describe why you decided to generate additional data, how you generated the data, identify where in your code, and provide example images of the additional data)
 
-The code for splitting the data into training and validation sets is contained in the fifth code cell of the IPython notebook.  
+The data set was already split into Training/Validation/Test and I just used that existing split:
+* The size of training set is 34799
+* The size of the validation set is 4410
+* The size of test set is 12630
 
-To cross validate my model, I randomly split the training data into a training set and validation set. I did this by ...
+As mentioned earlier, there is not a uniform distribution of samples per image label.
 
-My final training set had X number of images. My validation set and test set had Y and Z number of images.
+The sixth and seventh code cells of the IPython notebook contains the code for augmenting the data set. I initially generated more training data to try and increase the number of under-represented image labels (adding x3 for labels with 0-100 samples, x2 for 100-200 samples, and one extra for 200-300 samples).   This made the training data set much more uniform.
 
-The sixth code cell of the IPython notebook contains the code for augmenting the data set. I decided to generate additional data because ... To add more data to the the data set, I used the following techniques because ... 
+To do the aumenting, I took each image and used OpenCV to do a random -5 to 5 pixel horizonal and vertical translation, a random -12 to 12 degree rotation  I also did a random brightness shift.
 
 Here is an example of an original image and an augmented image:
 
