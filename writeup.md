@@ -28,8 +28,8 @@ Link to my [project code](https://github.com/cpierceworld/CarND-Traffic-Sign-Cla
 [test_image1]: ./examples/stop_sign_200.png "Stop Sign"
 [test_image2]: ./examples/thirty_200.png "30kph Sign"
 [test_image3]: ./examples/slippery_200.png "Slippery Sign"
-[test_image4]: ./examples/left_turn_200.png "Left Turn Sign"
-[test_image5]: ./examples/construction_200.png "Construction Sign"
+[test_image4]: ./examples/left_turn_200.png "Right Turn Sign"
+[test_image5]: ./examples/construction_200.png "Road Work Sign"
 [test_image6]: ./examples/right_of_way_200.png "Right Of Way Sign"
 [test_image7]: ./examples/hundred_thirty_200.png "130kph Sign"
 [before_after_image1]: ./examples/before_after_1.png "Before/After Processing Training Data"
@@ -37,6 +37,14 @@ Link to my [project code](https://github.com/cpierceworld/CarND-Traffic-Sign-Cla
 [transform_image]: ./examples/transformed.png "Before/After Transformation"
 [loss_image]: ./examples/loss_plot.png "Loss over EPOCHs"
 [accuracy_image]: ./examples/accuracy_plot.png "Accuracy over EPOCHs"
+[predict_image1]: ./examples/predict_stop_sign.png "Prediction Stop Sign"
+[predict_image2]: ./examples/predict_30kph.png "Prediction 30kph Sign"
+[predict_image3]: ./examples/predict_sippery.png "Prediction Slippery Sign"
+[predict_image4]: ./examples/predict_right_turn.png "Prediction Right Turn Sign"
+[predict_image5]: ./examples/predict_road_work.png "Prediction Road Work Sign"
+[predict_image6]: ./examples/predict_right_of_way.png "Prediction Right Of Way"
+[predict_image7]: ./examples/predict_130kph.png "Prediction 130kph Sign"
+
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -197,17 +205,28 @@ The model was able to correctly guess 6 of the 6 traffic signs, which gives an a
 
 #### 3. Describe how certain the model is when predicting on each of the five new images by looking at the softmax probabilities for each prediction and identify where in your code softmax probabilities were outputted. Provide the top 5 softmax probabilities for each image along with the sign type of each probability. (OPTIONAL: as described in the "Stand Out Suggestions" part of the rubric, visualizations can also be provided such as bar charts)
 
-The code for making predictions on my final model is located in the 20th cell of the Ipython notebook.
+The code for making predictions on my final model is located in the 20th cell of the Ipython notebook.  Below is  a plot of the top 5 predictions for each sign.
 
-Below are the predictions for the extra test images:
+![alt text][predict_image1]
+![alt text][predict_image2]
+![alt text][predict_image3]
+![alt text][predict_image4]
+![alt text][predict_image5]
+![alt text][predict_image6]
+![alt text][predict_image7]
 
-| Probability         	|     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| .60         			| Stop sign   									| 
-| .20     				| U-turn 										|
-| .05					| Yield											|
-| .04	      			| Bumpy Road					 				|
-| .01				    | Slippery Road      							|
+The top predictions for each sign:
+| Probability      | Prediction             | 
+|:----------------:|:----------------------:| 
+| 1.0000           | Stop sign              | 
+| 0.8859           | 30 km/h                |
+| 0.9909           | Slippery Road          |
+| 1.0000           | Right Turn             |
+| 1.0000           | Road Construction      |
+| 0.9959           | Right of Way           |
+| 0.9403           | 30 km/h                |
 
+For the 30 km/h sign, it only got 88.6% probability, the next higest also being a speed sign (11.4% for 50 km/h).   So it seems good at recognizing speed signs, not quite as confident with the digits.
 
-For the second image ... 
+The interesting one is the last one, the 130 km/h sign.  There was no 130 km/h sign in the training set nor is there a classifcation label for it.   Note the top 3 predictions for this sign are all speed signs, and the one if settled on at 94% probability is 30 km/h, and the sign actually contains "30" in the digits.
+
