@@ -217,7 +217,7 @@ The code for making predictions on my final model is located in the 20th cell of
 
 The top predictions for each sign:
 
-| Probability      | Prediction             | 
+| Probability      | Top Prediction         | 
 |:----------------:|:----------------------:| 
 | 1.0000           | Stop sign              | 
 | 0.8859           | 30 km/h                |
@@ -229,5 +229,5 @@ The top predictions for each sign:
 
 For the 30 km/h sign, it only got 88.6% probability, the next higest also being a speed sign (11.4% for 50 km/h).   So it seems good at recognizing speed signs, not quite as confident with the digits.
 
-The interesting one is the last one, the 130 km/h sign.  There was no 130 km/h sign in the training set nor is there a classifcation label for it.   Note the top 3 predictions for this sign are all speed signs, and the one if settled on at 94% probability is 30 km/h, and the sign actually contains "30" in the digits.
+The interesting one is the last one, the 130 km/h sign.  There was no 130 km/h sign in the training set and there is no classifcation label for it.   Note the top 3 predictions for this sign are all speed signs, and the one if settled on at 94% is the 30 km/h sign.  Note "130" contains "30" in the digits so the prediction seems resonable.
 
