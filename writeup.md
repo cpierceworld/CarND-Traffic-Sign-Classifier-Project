@@ -32,9 +32,11 @@ Link to my [project code](https://github.com/cpierceworld/CarND-Traffic-Sign-Cla
 [test_image5]: ./examples/construction_200.png "Construction Sign"
 [test_image6]: ./examples/right_of_way_200.png "Right Of Way Sign"
 [test_image7]: ./examples/hundred_thirty_200.png "130kph Sign"
+[before_after_image1]: ./examples/before_after_1.png "Before/After Processing Training Data"
+[before_after_image2]: ./examples/before_after_2.png "Before/After Processing Training Data"
 
 ## Rubric Points
-###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
+### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
 ---
 ### Data Set Summary & Exploration
@@ -72,7 +74,9 @@ As a first step, I decided to convert the images to grayscale because ...
 
 Here is an example of a traffic sign image before and after grayscaling.
 
-![alt text][image2]
+![alt text][before_after_image1]
+
+![alt text][before_after_image2]
 
 As a last step, I normalized the image data because ...
 
