@@ -107,7 +107,7 @@ However, in the end, I found that adding the augmented data to the trainig set a
 
 #### 3. Describe, and identify where in your code, what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
-The code for my final model is located in the eleventh cell of the ipython notebook. 
+The code for my final model is located in the tenth cell of the ipython notebook. 
 
 My final model consisted of the following layers:
 
@@ -133,12 +133,17 @@ To train the model, I used an ....
 
 #### 5. Describe the approach taken for finding a solution. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
 
-The code for calculating the accuracy of the model is located in the ninth cell of the Ipython notebook.
+The code for calculating the accuracy of the model is located in the eleventh, twelfth, and thirteenth cells of the Ipython notebook.
+
+My training included 50% dropout between fully connected layers, Atom Optimizer, learning rate of 0.00025, 100 EPOCHs, and a batch size of 128.
 
 My final model results were:
-* training set accuracy of ?
-* validation set accuracy of ? 
-* test set accuracy of ?
+* training set accuracy of 100.0%
+* validation set accuracy of 96.4%
+* test set accuracy of 95.9%
+
+Here is the graphs of the "loss" and the "accuracy" during training:
+
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
