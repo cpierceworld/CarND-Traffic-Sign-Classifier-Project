@@ -107,23 +107,23 @@ However, in the end, I found that adding the augmented data to the trainig set a
 
 #### 3. Describe, and identify where in your code, what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
 
-The code for my final model is located in the seventh cell of the ipython notebook. 
+The code for my final model is located in the eleventh cell of the ipython notebook. 
 
 My final model consisted of the following layers:
 
-| Layer         		|     Description	        					| 
+| Layer                 | Description                                   | 
 |:---------------------:|:---------------------------------------------:| 
-| Input         		| 32x32x3 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 32x32x64 	|
-| RELU					|												|
-| Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
-| Convolution 3x3	    | etc.      									|
-| Fully connected		| etc.        									|
-| Softmax				| etc.        									|
-|						|												|
-|						|												|
- 
-
+| Input                 | 32x32x3 RGB image                             | 
+| Convolution 5x5       | 1x1 stride, same padding, outputs 32x32x16    |
+| RELU                  |                                               |
+| Max pooling           | 2x2 stride, outputs 16x16x16                  |
+| Convolution 3x3       | 1x1 stride, same padding, outputs 16x16x32    |
+| RELU                  |                                               |
+| Max pooling           | 2x2 stride, outputs 8x8x32                    |
+| Fully connected       | input = 2048, output = 512                    |
+| Fully connected       | input = 512, output = 128                     |
+| Fully connected       | input = 128, output = 128                     |
+| Softmax               | input = 128, output = 43                      |
 
 #### 4. Describe how, and identify where in your code, you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
