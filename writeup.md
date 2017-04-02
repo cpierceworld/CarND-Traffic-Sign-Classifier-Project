@@ -1,9 +1,5 @@
 # **Traffic Sign Recognition** 
 
-## Writeup Template
-
-### You can use this file as a template for your writeup if you want to submit it as a markdown file, but feel free to use some other method and submit a pdf if you prefer.
-
 ---
 
 **Build a Traffic Sign Recognition Project**
@@ -16,6 +12,7 @@ The goals / steps of this project are the following:
 * Analyze the softmax probabilities of the new images
 * Summarize the results with a written report
 
+Link to my [project code](https://github.com/cpierceworld/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
 
 [//]: # (Image References)
 
@@ -27,6 +24,7 @@ The goals / steps of this project are the following:
 [image6]: ./examples/placeholder.png "Traffic Sign 3"
 [image7]: ./examples/placeholder.png "Traffic Sign 4"
 [image8]: ./examples/placeholder.png "Traffic Sign 5"
+[image_distro]: ./examples/image_distro.png "Test Image Distribution"
 [test_image1]: ./examples/stop_sign_200.png "Stop Sign"
 [test_image2]: ./examples/thirty_200.png "30kph Sign"
 [test_image3]: ./examples/slippery_200.png "Slippery Sign"
@@ -39,33 +37,30 @@ The goals / steps of this project are the following:
 ###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
 
 ---
-### Writeup / README
-
-#### 1. Provide a Writeup / README that includes all the rubric points and how you addressed each one. You can submit your writeup as markdown or pdf. You can use this template as a guide for writing the report. The submission includes the project code.
-
-You're reading it! and here is a link to my [project code](https://github.com/udacity/CarND-Traffic-Sign-Classifier-Project/blob/master/Traffic_Sign_Classifier.ipynb)
-
 ### Data Set Summary & Exploration
 
 #### 1. Provide a basic summary of the data set and identify where in your code the summary was done. In the code, the analysis should be done using python, numpy and/or pandas methods rather than hardcoding results manually.
 
-The code for this step is contained in the second code cell of the IPython notebook.  
+The code for this step is contained in the third code cell of the IPython notebook.  
 
-I used the pandas library to calculate summary statistics of the traffic
+I used the python and nupmy to calculate summary statistics of the traffic
 signs data set:
 
-* The size of training set is ?
-* The size of test set is ?
-* The shape of a traffic sign image is ?
-* The number of unique classes/labels in the data set is ?
+* The size of training set is 34799
+* The size of the validation set is 4410
+* The size of test set is 12630
+* The shape of a traffic sign image is 32 x 32 x 3
+* The number of unique classes/labels in the data set is 43
 
 #### 2. Include an exploratory visualization of the dataset and identify where the code is in your code file.
 
-The code for this step is contained in the third code cell of the IPython notebook.  
+The code for this step is contained in the fourth code cell of the IPython notebook.  
 
 Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
 
-![alt text][image1]
+![alt text][image_distro]
+
+It is clear that there is not a uniform distribution of samples per image label.   I attempted to generate more data for the under-represented lables (with random transformations of the existing samples), but I found that only made the training perform worse.
 
 ### Design and Test a Model Architecture
 
