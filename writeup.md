@@ -69,7 +69,7 @@ signs data set:
 
 The code for this step is contained in the fourth code cell of the IPython notebook.  
 
-Here is an exploratory visualization of the data set. It is a bar chart showing how the data ...
+Here is an exploratory visualization of the data set. It is a bar chart showing the number of sample images in the training set for each label.
 
 ![alt text][image_distro]
 
@@ -81,7 +81,7 @@ It is clear that there is not a uniform distribution of samples per image label.
 
 The code for this step is contained in the sixth, seventh, and eigth code cells of the IPython notebook.
 
-From "Data Set Exploration and Visualization", I could see that man of the images were dark and with low contrast.  I rand the training data through a histogram equalization process using OpenCV's implementation of "Contrast Limited Adaptive Histogram Equalization" (CLACHE)]
+From "Data Set Exploration and Visualization", I could see that many of the images were dark and with low contrast.  I ran the training data through a histogram equalization process using OpenCV's implementation of "Contrast Limited Adaptive Histogram Equalization" (CLACHE)
 
 The result was the training data being all of relatively equal brightness and contrast:
 
@@ -104,7 +104,7 @@ As mentioned earlier, there is not a uniform distribution of samples per image l
 
 The sixth and seventh code cells of the IPython notebook contains the code for augmenting the data set. I initially generated more training data to try and increase the number of under-represented image labels (adding x3 for labels with 0-100 samples, x2 for 100-200 samples, and one extra for 200-300 samples).   This made the training data set much more uniform.
 
-To do the aumenting, I took each image and used OpenCV to do a random -5 to 5 pixel horizonal and vertical translation, a random -12 to 12 degree rotation  I also did a random brightness shift.
+To do the augmenting, I took each image and used OpenCV to do a random -5 to 5 pixel horizonal and vertical translation, a random -12 to 12 degree rotation  I also did a random brightness shift.
 
 Here is an example of an original image and an augmented image:
 
@@ -227,6 +227,6 @@ The top predictions for each sign:
 | 0.9959           | Right of Way           |
 | 0.9403           | 30 km/h                |
 
-For the 30 km/h sign, it only got 88.6% probability, the next higest also being a speed sign (11.4% for 50 km/h).   So it seems good at recognizing speed signs, not quite as confident with the digits.
+For the 30 km/h sign, it only got 88.6% probability, the next highest also being a speed sign (11.4% for 50 km/h).   So it seems good at recognizing speed signs, not quite as confident with the digits.
 
-The interesting one is the last one, the 130 km/h sign.  There was no 130 km/h sign in the training set and there is no classifcation label for it.   Note the top 3 predictions for this sign are all speed signs, and the one if settled on at 94% is the 30 km/h sign.  Note "130" contains "30" in the digits so the prediction seems resonable.
+The interesting one is the last one, the 130 km/h sign.  There was no 130 km/h sign in the training set and there is no classifcation label for it.   Note the top 3 predictions for this sign are all speed signs, and the one if settled on at 94% is the 30 km/h sign.  Note "130" contains "30" in the digits so the prediction seems reasonable.
