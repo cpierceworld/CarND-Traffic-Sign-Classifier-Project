@@ -34,6 +34,8 @@ Link to my [project code](https://github.com/cpierceworld/CarND-Traffic-Sign-Cla
 [test_image7]: ./examples/hundred_thirty_200.png "130kph Sign"
 [before_after_image1]: ./examples/before_after_1.png "Before/After Processing Training Data"
 [before_after_image2]: ./examples/before_after_2.png "Before/After Processing Training Data"
+[transform_image]: ./examples/transformed.png "Before/After Transformation"
+
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -97,9 +99,10 @@ To do the aumenting, I took each image and used OpenCV to do a random -5 to 5 pi
 
 Here is an example of an original image and an augmented image:
 
-![alt text][image3]
+![alt text][transform_image]
 
-The difference between the original data set and the augmented data set is the following ... 
+
+However, in the end, I found that adding the augmented data to the trainig set actually _decreased_ accuraacy in the end, so I ended up not using the generated images.
 
 
 #### 3. Describe, and identify where in your code, what your final model architecture looks like including model type, layers, layer sizes, connectivity, etc.) Consider including a diagram and/or table describing the final model.
