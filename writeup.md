@@ -27,6 +27,13 @@ The goals / steps of this project are the following:
 [image6]: ./examples/placeholder.png "Traffic Sign 3"
 [image7]: ./examples/placeholder.png "Traffic Sign 4"
 [image8]: ./examples/placeholder.png "Traffic Sign 5"
+[test_image1]: ./test_imgs/stop_sign.png "Stop Sign"
+[test_image2]: ./test_imgs/thirty.png "30kph Sign"
+[test_image3]: ./test_imgs/slippery.png "Slippery Sign"
+[test_image4]: ./test_imgs/left_turn.png "Left Turn Sign"
+[test_image5]: ./test_imgs/construction.png "Construction Sign"
+[test_image6]: ./test_imgs/right_of_way.png "Right Of Way Sign"
+[test_image7]: ./test_imgs/hundred_thirty.png "130kph Sign"
 
 ## Rubric Points
 ###Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -145,8 +152,9 @@ If a well known architecture was chosen:
 
 Here are five German traffic signs that I found on the web:
 
-![alt text][image4] ![alt text][image5] ![alt text][image6] 
-![alt text][image7] ![alt text][image8]
+![alt text][test_image1] ![alt text][test_image2] ![alt text][test_image3] 
+![alt text][test_image4] ![alt text][test_image5] ![alt text][test_image6] 
+![alt text][test_image7] 
 
 The first image might be difficult to classify because ...
 
