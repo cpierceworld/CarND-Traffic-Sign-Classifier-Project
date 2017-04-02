@@ -35,7 +35,8 @@ Link to my [project code](https://github.com/cpierceworld/CarND-Traffic-Sign-Cla
 [before_after_image1]: ./examples/before_after_1.png "Before/After Processing Training Data"
 [before_after_image2]: ./examples/before_after_2.png "Before/After Processing Training Data"
 [transform_image]: ./examples/transformed.png "Before/After Transformation"
-
+[loss_image]: ./examples/loss_plot.png "Loss over EPOCHs"
+[accuracy_image]: ./examples/accuracy_plot.png "Accuracy over EPOCHs"
 
 ## Rubric Points
 ### Here I will consider the [rubric points](https://review.udacity.com/#!/rubrics/481/view) individually and describe how I addressed each point in my implementation.  
@@ -128,14 +129,16 @@ My final model consisted of the following layers:
 #### 4. Describe how, and identify where in your code, you trained your model. The discussion can include the type of optimizer, the batch size, number of epochs and any hyperparameters such as learning rate.
 
 The code for training the model is located in the eigth cell of the ipython notebook. 
+The code for training the model is located in the eleventh, twelfth, and thirteenth cells of the Ipython notebook.
 
-To train the model, I used an ....
+My training included:
+* 50% dropout between fully connected layers
+* Atom Optimizer
+* learning rate of 0.00025
+* 100 EPOCHs
+* batch size of 128.
 
 #### 5. Describe the approach taken for finding a solution. Include in the discussion the results on the training, validation and test sets and where in the code these were calculated. Your approach may have been an iterative process, in which case, outline the steps you took to get to the final solution and why you chose those steps. Perhaps your solution involved an already well known implementation or architecture. In this case, discuss why you think the architecture is suitable for the current problem.
-
-The code for calculating the accuracy of the model is located in the eleventh, twelfth, and thirteenth cells of the Ipython notebook.
-
-My training included 50% dropout between fully connected layers, Atom Optimizer, learning rate of 0.00025, 100 EPOCHs, and a batch size of 128.
 
 My final model results were:
 * training set accuracy of 100.0%
@@ -143,7 +146,7 @@ My final model results were:
 * test set accuracy of 95.9%
 
 Here is the graphs of the "loss" and the "accuracy" during training:
-
+![alt text][loss_image] ![alt text][accuracy_image]
 
 If an iterative approach was chosen:
 * What was the first architecture that was tried and why was it chosen?
