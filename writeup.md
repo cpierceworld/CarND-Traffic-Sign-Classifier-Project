@@ -146,6 +146,7 @@ My final model results were:
 * test set accuracy of 95.9%
 
 Here is the graphs of the "loss" and the "accuracy" during training:
+
 ![alt text][loss_image] ![alt text][accuracy_image]
 
 If an iterative approach was chosen:
