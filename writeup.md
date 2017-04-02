@@ -149,20 +149,23 @@ Here is the graphs of the "loss" and the "accuracy" during training:
 
 ![alt text][loss_image] ![alt text][accuracy_image]
 
-If an iterative approach was chosen:
-* What was the first architecture that was tried and why was it chosen?
-* What were some problems with the initial architecture?
-* How was the architecture adjusted and why was it adjusted? Typical adjustments could include choosing a different model architecture, adding or taking away layers (pooling, dropout, convolution, etc), using an activation function or changing the activation function. One common justification for adjusting an architecture would be due to over fitting or under fitting. A high accuracy on the training set but low accuracy on the validation set indicates over fitting; a low accuracy on both sets indicates under fitting.
-* Which parameters were tuned? How were they adjusted and why?
-* What are some of the important design choices and why were they chosen? For example, why might a convolution layer work well with this problem? How might a dropout layer help with creating a successful model?
+I started with the LeNet architecture which is a well known architecture for classification problems and that I had readily available.
 
-If a well known architecture was chosen:
-* What architecture was chosen?
-* Why did you believe it would be relevant to the traffic sign application?
-* How does the final model's accuracy on the training, validation and test set provide evidence that the model is working well?
+The LetNet architecture was able to get an accuracy in the 80's (percent).  My assumption was that it was not robust enough for the road sign images vs. digit images (from 1 chanel black and white to 3 channel color, as well going from 10 labels to 43)
+
+I next increased the depth of the ouput nodes in the convolution layers (for the extra color channels) and increased the number of nodes in the fully connected layers, including adding a layer (for the extra labels).  With this I was able to "overfit" so I knew the model was capable of modeling the data.
+
+I then added dropout between the fully connected layers to counteract the overfitting.
+
+From that point it was a lot of trial and error:
+* Raising/Lower the dropout
+* Adding/Removing output depth of the convolution layers
+* Addding/Removing nodes from the the fully connected layers
+* Adding/Removing fully connected layers
+* Increasing/Decreasing the learning rate
  
 
-###Test a Model on New Images
+### Test a Model on New Images
 
 #### 1. Choose five German traffic signs found on the web and provide them in the report. For each image, discuss what quality or qualities might be difficult to classify.
 
