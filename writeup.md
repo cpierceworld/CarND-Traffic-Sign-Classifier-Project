@@ -216,6 +216,7 @@ The code for making predictions on my final model is located in the 20th cell of
 ![alt text][predict_image7]
 
 The top predictions for each sign:
+
 | Probability      | Prediction             | 
 |:----------------:|:----------------------:| 
 | 1.0000           | Stop sign              | 
